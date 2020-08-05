@@ -8,8 +8,11 @@ requests.packages.urllib3.disable_warnings();
 #Set Max_Worker Limit
 max_worker = 32;
 
-def init(self,url):
-    self.url = url;
-    r1 = requests.get(url, stream=True, verify=False);
-    self.size = int(r1.headers['Content-Length']);
-    
+#Create downloader Object for each download process.
+class downloader:
+    url='';
+    fileSize='';
+
+    def __init__(self,url):
+        self.url = url;  
+        self.fileSize = int(requests.get())
